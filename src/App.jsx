@@ -34,6 +34,17 @@ function App() {
     window.localStorage.setItem("tasks", JSON.stringify(updatedTasks));
     setOpenModal(false);
   };
+
+  const handleRenameTask = (idTask, newTitle) => {
+    const data = JSON.parse(window.localStorage.getItem("tasks"));
+    if (data) {
+      const updatedTasks = data.map((item) =>
+        item.id === idTask ? { ...item, title: newTitle } : item
+      );
+      setTasks(updatedTasks);
+      window.localStorage.setItem("tasks", JSON.stringify(updatedTasks));
+    }
+  };
   return (
     <main className="h-screen justify-items-center content-center">
       <AddTask
@@ -59,6 +70,7 @@ function App() {
                   key={task.id}
                   task={task}
                   onChange={() => handleCheckTask(task.id)}
+                  onRename={handleRenameTask}
                 />
               ))}
             </div>
