@@ -44,4 +44,4 @@ A clean and intuitive to-do list application built with React. Manage your daily
 
 ### Preview
 
-![preview](/gif/preview.gif)
+![preview](/public/gif/preview.gif)
