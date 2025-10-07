@@ -1,16 +1,47 @@
-# React + Vite
+# Todoin - Simple To-Do List App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A clean and intuitive to-do list application built with React. Manage your daily tasks efficiently with an easy-to-use interface.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+✨ **Core Features:**
 
-## React Compiler
+- ➕ Add new tasks
+- ✏️ Rename existing tasks
+- ✅ Mark tasks as complete/incomplete
+- 🗑️ Delete tasks
+- 💾 Persistent storage using localStorage
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
 
-## Expanding the ESLint configuration
+- **React** - UI Framework
+- **Tailwind CSS** - Styling
+- **Lucide React** - Icons
+- **LocalStorage** - Data persistence
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Usage
+
+### Adding a Task
+
+1. Click the purple **+** button at the bottom-right corner
+2. Enter your task in the modal
+3. Click confirm to add the task
+
+### Completing a Task
+
+- Click the checkbox next to any task to mark it as complete
+- Completed tasks will have a strikethrough style
+
+### Renaming a Task
+
+1. Click the pencil icon (✏️) next to the task
+2. Enter the new task name
+3. Click confirm to save changes
+
+### Deleting a Task
+
+- Click the trash icon (🗑️) next to the task you want to remove
+
+### Preview
+
+![preview](/gif/preview.gif)
