@@ -72,8 +72,12 @@ function App() {
           </div>
           <div className="grid grid-rows-1">
             {/* list tasks */}
-            <div>
-              {tasks.map((task) => (
+            {tasks.length === 0 ? (
+              <div className="text-4xl text-gray-500 flex justify-center items-center h-64">
+                Task is empty
+              </div>
+            ) : (
+              tasks.map((task) => (
                 <CardTask
                   key={task.title}
                   task={task}
@@ -81,8 +85,8 @@ function App() {
                   onRename={handleRenameTask}
                   onDelete={handleDeleteTask}
                 />
-              ))}
-            </div>
+              ))
+            )}
           </div>
         </div>
         <button
