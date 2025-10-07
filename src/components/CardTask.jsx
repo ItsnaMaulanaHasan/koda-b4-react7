@@ -18,7 +18,7 @@ function CardTask({ task, onChange, onRename, onDelete }) {
     setOpenModalDelete(false);
   };
   return (
-    <div className="flex justify-between items-center py-5 border-b-2 border-b-gray-500 w-full">
+    <div className="flex justify-between items-center py-5 px-3 border-b-2 border-b-gray-500 w-full hover:bg-gray-200">
       <RenameTask
         taskTitle={task.title}
         isOpen={openModalRename}
