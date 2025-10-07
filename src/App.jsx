@@ -45,6 +45,14 @@ function App() {
       window.localStorage.setItem("tasks", JSON.stringify(updatedTasks));
     }
   };
+  const handleDeleteTask = (idTask) => {
+    const data = JSON.parse(window.localStorage.getItem("tasks"));
+    if (data) {
+      const updatedTasks = data.filter((item) => item.id !== idTask);
+      setTasks(updatedTasks);
+      window.localStorage.setItem("tasks", JSON.stringify(updatedTasks));
+    }
+  };
   return (
     <main className="h-screen justify-items-center content-center">
       <AddTask
@@ -67,10 +75,11 @@ function App() {
             <div>
               {tasks.map((task) => (
                 <CardTask
-                  key={task.id}
+                  key={task.title}
                   task={task}
                   onChange={() => handleCheckTask(task.id)}
                   onRename={handleRenameTask}
+                  onDelete={handleDeleteTask}
                 />
               ))}
             </div>
