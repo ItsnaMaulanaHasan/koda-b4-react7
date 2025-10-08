@@ -12,29 +12,32 @@ function RenameTask({ isOpen, onClose, onConfirm, taskTitle, ref }) {
           RENAME TASK
         </h2>
         {/* input */}
-        <input
-          ref={ref}
-          type="text"
-          name="nameTask"
-          id="nameTask"
-          defaultValue={taskTitle}
-          className="border border-gray-500 rounded-md px-5 py-2 w-full focus:outline-none"
-        />
-        {/* buttons */}
-        <div className="flex gap-3">
-          <button
-            onClick={onClose}
-            className="flex-1 py-3 px-4 border-2 border-gray-300 rounded-lg font-medium text-gray-700 hover:bg-gray-50 transition"
-          >
-            CANCEL
-          </button>
-          <button
-            onClick={onConfirm}
-            className={`flex-1 py-3 px-4 rounded-lg font-medium transition bg-[#6C63FF] text-white hover:bg-[#2822a3]`}
-          >
-            APPLY
-          </button>
-        </div>
+        <form onSubmit={onConfirm} className="flex flex-col gap-10">
+          <input
+            ref={ref}
+            type="text"
+            name="nameTask"
+            id="nameTask"
+            defaultValue={taskTitle}
+            required
+            className="border border-gray-500 rounded-md px-5 py-2 w-full focus:outline-none"
+          />
+          {/* buttons */}
+          <div className="flex gap-3">
+            <button
+              onClick={onClose}
+              className="flex-1 py-3 px-4 border-2 border-gray-300 rounded-lg font-medium text-gray-700 hover:bg-gray-50 transition"
+            >
+              CANCEL
+            </button>
+            <button
+              type="submit"
+              className={`flex-1 py-3 px-4 rounded-lg font-medium transition bg-[#6C63FF] text-white hover:bg-[#2822a3]`}
+            >
+              APPLY
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   );
