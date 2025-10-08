@@ -11,17 +11,18 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  const [tasks, setTasks] = useState([]);
-  useEffect(() => {
+  const [tasks, setTasks] = useState(() => {
     try {
       const data = window.localStorage.getItem("tasks");
-      if (data) {
-        setTasks(JSON.parse(data));
-      }
+      return data ? JSON.parse(data) : [];
     } catch (error) {
       console.log("Failed to parse tasks from localStorage:", error);
+      return [];
     }
-  }, []);
+  });
+  useEffect(() => {
+    window.localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
   return (
     <TaskContext.Provider value={{ tasks, setTasks }}>
       <RouterProvider router={router} />;

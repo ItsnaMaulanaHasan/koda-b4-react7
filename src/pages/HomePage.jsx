@@ -14,7 +14,6 @@ function HomePage() {
       task.id === idTask ? { ...task, isDone: !task.isDone } : task
     );
     setTasks(updatedTasks);
-    window.localStorage.setItem("tasks", JSON.stringify(updatedTasks));
   };
 
   const handleAddTask = () => {
@@ -25,27 +24,19 @@ function HomePage() {
     };
     const updatedTasks = [...tasks, newTask];
     setTasks(updatedTasks);
-    window.localStorage.setItem("tasks", JSON.stringify(updatedTasks));
     setOpenModal(false);
   };
 
   const handleRenameTask = (idTask, newTitle) => {
-    const data = JSON.parse(window.localStorage.getItem("tasks"));
-    if (data) {
-      const updatedTasks = data.map((item) =>
-        item.id === idTask ? { ...item, title: newTitle } : item
-      );
-      setTasks(updatedTasks);
-      window.localStorage.setItem("tasks", JSON.stringify(updatedTasks));
-    }
+    const updatedTasks = tasks.map((item) =>
+      item.id === idTask ? { ...item, title: newTitle } : item
+    );
+    setTasks(updatedTasks);
   };
   const handleDeleteTask = (idTask) => {
-    const data = JSON.parse(window.localStorage.getItem("tasks"));
-    if (data) {
-      const updatedTasks = data.filter((item) => item.id !== idTask);
-      setTasks(updatedTasks);
-      window.localStorage.setItem("tasks", JSON.stringify(updatedTasks));
-    }
+    const updatedTasks = tasks.filter((item) => item.id !== idTask);
+    setTasks(updatedTasks);
+    window.localStorage.setItem("tasks", JSON.stringify(updatedTasks));
   };
   return (
     <main className="h-screen justify-items-center content-center">
