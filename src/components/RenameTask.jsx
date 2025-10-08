@@ -32,7 +32,7 @@ function RenameTask({ isOpen, onClose, onConfirm, taskTitle, ref }) {
             </button>
             <button
               type="submit"
-              className={`flex-1 py-3 px-4 rounded-lg font-medium transition bg-[#6C63FF] text-white hover:bg-[#2822a3]`}
+              className={`flex-1 py-3 px-4 rounded-lg font-medium transition bg-[#7F265B] text-white hover:bg-[#481333]`}
             >
               APPLY
             </button>

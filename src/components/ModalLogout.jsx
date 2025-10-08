@@ -31,7 +31,7 @@ function DeleteTask({ isOpen, onClose, onConfirm }) {
           </button>
           <button
             onClick={onConfirm}
-            className={`flex-1 py-3 px-4 rounded-lg font-medium transition bg-[#6C63FF] text-white hover:bg-[#2822a3]`}
+            className={`flex-1 py-3 px-4 rounded-lg font-medium transition bg-[#7F265B] text-white hover:bg-[#481333]`}
           >
             CONFIRM
           </button>
