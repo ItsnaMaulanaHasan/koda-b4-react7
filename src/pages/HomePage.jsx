@@ -1,8 +1,8 @@
 import { useContext, useRef, useState } from "react";
 import { TaskContext } from "../context/TaskContext";
-import AddTasks from "../components/AddTaks";
-import CardTask from "../components/CardTask";
 import { Plus } from "lucide-react";
+import CardTask from "../components/CardTask";
+import AddTasks from "../components/AddTaks";
 
 function HomePage() {
   const { tasks, setTasks } = useContext(TaskContext);
