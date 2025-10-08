@@ -48,7 +48,7 @@ function HomePage() {
       />
       <div className="w-1/2 shadow-2xl rounded-4xl overflow-hidden">
         {/* navbar */}
-        <div className="bg-[#6C63FF] px-20 py-10"></div>
+        <div className="bg-[#7F265B] px-20 py-10"></div>
         <div className="mt-5 px-20 pb-40 relative min-h-120">
           {/* header */}
           <div className="flex flex-col gap-3 mb-5">
@@ -75,7 +75,7 @@ function HomePage() {
           </div>
           <button
             onClick={() => setOpenModal(true)}
-            className="absolute rounded-full size-18 bg-[#6C63FF] bottom-10 right-10 flex items-center justify-center cursor-pointer hover:bg-[#2822a3]"
+            className="absolute rounded-full size-18 bg-[#7F265B] bottom-10 right-10 flex items-center justify-center cursor-pointer hover:bg-[#481333]"
           >
             <Plus color="#fff" size={32} />
           </button>

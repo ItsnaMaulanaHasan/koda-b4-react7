@@ -5,15 +5,21 @@ import { TaskContext } from "./context/TaskContext";
 import LoginPage from "./pages/LoginPage";
 import HomePage from "./pages/HomePage";
 import ProtectedRoute from "./context/ProtectedRoute";
+import MainLayout from "./layouts/MainLayout";
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: (
-      <ProtectedRoute>
-        <HomePage />
-      </ProtectedRoute>
-    ),
+    element: <MainLayout />,
+    children: [
+      {
+        path: "/",
+        element: (
+          <ProtectedRoute>
+            <HomePage />
+          </ProtectedRoute>
+        ),
+      },
+    ],
   },
   {
     path: "/auth/login",
